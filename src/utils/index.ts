@@ -28,4 +28,10 @@ export const deleteFile = (filePath: string) => {
   });
 };
 
+// Create the directory if it doesn't exist
+export const makeDirExist = (dirPath: string) => {
+  if (fs.existsSync(dirPath)) return;
+  fs.mkdirSync(dirPath, { recursive: true });
+};
+
 export * from './simply-result';
